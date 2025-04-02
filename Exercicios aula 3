@@ -1,0 +1,587 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMrvfP2y08pZ6PPMeROtzbb",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JuliaPrin3298/Algoritimos-/blob/main/Exercicios%20aula%203\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "1. Conversor de Moedas\n",
+        "Implemente um conversor de moedas que permita ao usuário escolher entre Dólar (USD),\n",
+        " Euro (EUR) e Libra (GBP) e converter um valor informado para Reais (BRL)."
+      ],
+      "metadata": {
+        "id": "MkAYuBlJOTzy"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "opcao = int(input(\"Selecione sua moeda para conversão: \\n Dólar(1) \\n Euro(2) \\n Libra(3) \\n\"))\n",
+        "\n",
+        "match opcao:\n",
+        "    case 1:\n",
+        "        reais = float(input(\"Informe o valor que será convertido: \"))\n",
+        "        print(f\"O valor em dólares é {reais / 5.70}\")\n",
+        "    case 2:\n",
+        "        reais = float(input(\"Informe o valor que será convertido: \"))\n",
+        "        print(f\"O valor em euro é {reais / 6.18}\")\n",
+        "    case 3:\n",
+        "        reais = float(input(\"Informe o valor que será convertido: \"))\n",
+        "        print(f\"O valor em libras é {reais / 7.48052}\")\n",
+        "    case _:\n",
+        "        print(\"Valor não identificado. Tente novamente!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K-hDt0_6OXG5",
+        "outputId": "1c71552f-a58e-43ee-a2f3-c37acde255c0"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Selecione sua moeda para conversão: \n",
+            " Dólar(1) \n",
+            " Euro(2) \n",
+            " Libra(3) \n",
+            "2\n",
+            "Informe o valor que será convertido: 7.18\n",
+            "O valor em euro é 1.161812297734628\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2 . Cálculo de Área de Figuras Geométricas\n",
+        "Desenvolva um programa que permita ao usuário escolher entre calcular a área de um quadrado,\n",
+        "retângulo ou triângulo e insira os valores necessários para o cálculo."
+      ],
+      "metadata": {
+        "id": "0gVUp9MeOzIa"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "opcao2 = int(input(\"Selecione a figura Geometrica: \\n Quadrado e Retângulo (1) \\n Triângulo(2) \\n\"))\n",
+        "\n",
+        "match opcao2:\n",
+        "    case 1:\n",
+        "        print(\"Para o calculo de um quadrado ou retângulo são necessarios a largura da Base(b) e a Altura(h)\")\n",
+        "        base = float(input(\"Digite a lagura da Base: \"))\n",
+        "        altura = float(input(\"Digite a Altura: \"))\n",
+        "        print(f\"O resultado é adquirido quando os dois números são multiplicados, logo B x H. O resultado é {base * altura}\")\n",
+        "    case 2:\n",
+        "        print(\"Para o calculo de um triângulo são necessarios a lagura da Base(b) e a Altura(h) \")\n",
+        "        base = float(input(\"Digite a lagura da Base: \"))\n",
+        "        altura = float(input(\"Digite a Altura: \"))\n",
+        "        print(f\"O resultado é adquirido quando multiplicamos os dois números e os dividimos por 2, logo B x H/2. O resultado é {base * altura / 2}\")\n",
+        "    case _:\n",
+        "        print(\"Valor não identificado. Tente novamente!\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZhuK1KjASR2s",
+        "outputId": "69914ddc-262d-4386-e86c-de681c807dac"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Selecione a figura Geometrica: \n",
+            " Quadrado e Retângulo (1) \n",
+            " Triângulo(2) \n",
+            "3\n",
+            "Valor não identificado. Tente novamente!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "3. Sistema de Login Simples\n",
+        "\n",
+        "O programa deve pedir ao usuário que informe seu nome de usuário e, com base nisso, conceder um nível de acesso:\n",
+        "\n",
+        "Admin → Acesso total\n",
+        "\n",
+        "Professor → Acesso ao ambiente acadêmico\n",
+        "\n",
+        "Aluno → Acesso ao ambiente de estudos"
+      ],
+      "metadata": {
+        "id": "y34lZbx-SzE8"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "    opcao3 = input(\"Informe o usuario: \\n Admin \\n Professor \\n Aluno \\n  \")\n",
+        "\n",
+        "    match opcao3:\n",
+        "        case \"Admin\":\n",
+        "            id = int(input(\"Informe o ID: \"))\n",
+        "            senha = input(\"Informe senha: \")\n",
+        "            print(\"Logado\")\n",
+        "        case \"Professor\":\n",
+        "            id = int(input(\"Informe o ID: \"))\n",
+        "            senha = input(\"Informe senha: \")\n",
+        "            print(\"Logado\")\n",
+        "        case \"Aluno\":\n",
+        "            id = int(input(\"Informe o ID: \"))\n",
+        "            senha = input(\"Informe senha: \")\n",
+        "            print(\"Logado\")\n",
+        ""
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Ku3SxWCdS9oL",
+        "outputId": "a844b6f9-a7af-40ac-fd92-c96fcb12b74d"
+      },
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Informe o usuario: \n",
+            " Admin \n",
+            " Professor \n",
+            " Aluno \n",
+            "  Aluno\n",
+            "Informe o ID: 123456\n",
+            "Informe senha: alou\n",
+            "Logado\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "4. Cálculo de Desconto por Categoria\n",
+        "\n",
+        "O usuário deve informar o tipo de produto (Eletrônico, Roupas, Alimentos, Móveis),\n",
+        "e o programa exibirá o percentual de desconto correspondente."
+      ],
+      "metadata": {
+        "id": "O6G8VS1lXwYg"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "while True:\n",
+        "    print(\"\\n===== DESCONTOS =====\")\n",
+        "    print(\"1 - Eletrônico\")\n",
+        "    print(\"2 - Roupas\")\n",
+        "    print(\"3 - Alimentos\")\n",
+        "    print(\"4 - Móveis\")\n",
+        "    print(\"5 - Sair\")\n",
+        "\n",
+        "    opcao4 = input(\"Escolha uma opção: \")\n",
+        "\n",
+        "    match opcao4:\n",
+        "        case \"1\":\n",
+        "            print(f\"Seu desconto é 10%\")\n",
+        "\n",
+        "        case \"2\":\n",
+        "            print(f\"Seu desconto é de 20%\")\n",
+        "\n",
+        "        case \"3\":\n",
+        "           print(f\"Não á desconto\")\n",
+        "\n",
+        "        case \"4\":\n",
+        "            print(\"Desconto relampago 30%\")\n",
+        "\n",
+        "        case \"5\":\n",
+        "            print(\"Saindo... Obrigado por utilizar nosso caixa eletrônico!\")\n",
+        "            break\n",
+        "\n",
+        "        case _:\n",
+        "            print(\"Opção inválida. Escolha uma opção válida.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "75fCEvozXw93",
+        "outputId": "a613b9ac-abd0-4e5e-aa90-e44ad72feb21"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "===== DESCONTOS =====\n",
+            "1 - Eletrônico\n",
+            "2 - Roupas\n",
+            "3 - Alimentos\n",
+            "4 - Móveis\n",
+            "5 - Sair\n",
+            "Escolha uma opção: 3\n",
+            "Não á desconto\n",
+            "\n",
+            "===== DESCONTOS =====\n",
+            "1 - Eletrônico\n",
+            "2 - Roupas\n",
+            "3 - Alimentos\n",
+            "4 - Móveis\n",
+            "5 - Sair\n",
+            "Escolha uma opção: 1\n",
+            "Seu desconto é 10%\n",
+            "\n",
+            "===== DESCONTOS =====\n",
+            "1 - Eletrônico\n",
+            "2 - Roupas\n",
+            "3 - Alimentos\n",
+            "4 - Móveis\n",
+            "5 - Sair\n",
+            "Escolha uma opção: 5\n",
+            "Saindo... Obrigado por utilizar nosso caixa eletrônico!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "5 . Tradutor de Cores\n",
+        "\n",
+        "O usuário informa uma cor em português (vermelho, azul, verde, amarelo), e o programa exibe sua tradução para inglês."
+      ],
+      "metadata": {
+        "id": "AiNBxGUxX_Yw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "opcao5 = int(input(\"Escolha uma opção: \\n 1. Vermelho \\n 2. Azul \\n 3. Amarelo \\n Verde\"))\n",
+        "\n",
+        "match opcao5:\n",
+        "    case \"1\":\n",
+        "        print(f\"Red \")\n",
+        "\n",
+        "    case \"2\":\n",
+        "        print(f\"Blue\")\n",
+        "\n",
+        "    case \"3\":\n",
+        "        print(f\"Yellow\")\n",
+        "\n",
+        "    case \"4\":\n",
+        "        print(\"Green\")\n"
+      ],
+      "metadata": {
+        "id": "nYNHxYNPYDh3"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "6. Simulação de Atendimento Telefônico\n",
+        "\n",
+        "O usuário seleciona uma opção de atendimento telefônico:\n",
+        "\n",
+        "1 - Suporte Técnico\n",
+        "\n",
+        "2 - Financeiro\n",
+        "\n",
+        "3 - Cancelamento\n",
+        "\n",
+        "4 - Falar com um atendente"
+      ],
+      "metadata": {
+        "id": "4AZHzCWGblov"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while True:\n",
+        "    print(\"\\n===== Atendimento ao Cliente =====\")\n",
+        "    print(\"1 - Suporte Técnico\")\n",
+        "    print(\"2 - Financeiro\")\n",
+        "    print(\"3 - Cancelamento\")\n",
+        "    print(\"4 - Falar com um atendendte\")\n",
+        "    print(\"5 - Sair\")\n",
+        "\n",
+        "    opcao6 = input(\"Escolha uma opção: \")\n",
+        "\n",
+        "    match opcao6:\n",
+        "        case \"1\":\n",
+        "            print(f\"Reinicie seu aparelho, por 3 minutos fora da tomada\")\n",
+        "\n",
+        "        case \"2\":\n",
+        "            print(f\"Seu Saldo é de 500 minutos\")\n",
+        "\n",
+        "        case \"3\":\n",
+        "           print(f\"Certeza do cancelamento? Nossos produtos são os melhores\")\n",
+        "\n",
+        "        case \"4\":\n",
+        "            print(\"Aguarde\")\n",
+        "\n",
+        "        case \"5\":\n",
+        "            print(\"Saindo... Obrigado por utilizar nosso atendimento ao cliente!\")\n",
+        "            break\n",
+        "\n",
+        "        case _:\n",
+        "            print(\"Opção inválida. Escolha uma opção válida.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "bEpCXOEDbkH4",
+        "outputId": "7f3d7fd6-14ce-427c-d51e-51d59984f617"
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "\n",
+            "===== Atendimento ao Cliente =====\n",
+            "1 - Suporte Técnico\n",
+            "2 - Financeiro\n",
+            "3 - Cancelamento\n",
+            "4 - Falar com um atendendte\n",
+            "5 - Sair\n",
+            "Escolha uma opção: 3\n",
+            "Certeza do cancelamento? Nossos produtos são os melhores\n",
+            "\n",
+            "===== Atendimento ao Cliente =====\n",
+            "1 - Suporte Técnico\n",
+            "2 - Financeiro\n",
+            "3 - Cancelamento\n",
+            "4 - Falar com um atendendte\n",
+            "5 - Sair\n",
+            "Escolha uma opção: 0\n",
+            "Opção inválida. Escolha uma opção válida.\n",
+            "\n",
+            "===== Atendimento ao Cliente =====\n",
+            "1 - Suporte Técnico\n",
+            "2 - Financeiro\n",
+            "3 - Cancelamento\n",
+            "4 - Falar com um atendendte\n",
+            "5 - Sair\n",
+            "Escolha uma opção: 5\n",
+            "Saindo... Obrigado por utilizar nosso atendimento ao cliente!\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "7. Calculadora Simples\n",
+        "O usuário escolhe uma operação matemática (+, -, *, /)\n",
+        "e insere dois números. O programa exibe o resultado."
+      ],
+      "metadata": {
+        "id": "D6sQVR-Yb66_"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "opcao7 = int(input(\"Selecione a operação: \\n Adição (1) \\n Subtração(2) \\n Multiplicação(3) \\n Divisão (4)\"))\n",
+        "num1 = int(input(\"Insira um número: \"))\n",
+        "num2 = int(input(\"Insira um número: \"))\n",
+        "\n",
+        "match opcao7:\n",
+        "    case 1:\n",
+        "        print(f\"O resultado é {num1 + num2}\")\n",
+        "    case 2:\n",
+        "        print(f\"O resultado é {num1 - num2}\")\n",
+        "    case 3:\n",
+        "        print(f\"O resultado é {num1 * num2}\")\n",
+        "    case 4:\n",
+        "        print(f\"O resultado é {num1 / num2}\")\n",
+        "    case _:\n",
+        "        print(\"Valor não identificado. Tente novamente!\")"
+      ],
+      "metadata": {
+        "id": "gZKIH4xBdpx5"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "8. Sistema de Reserva de Passagens\n",
+        "\n",
+        "O usuário escolhe um destino (São Paulo, Rio de Janeiro, Curitiba, Salvador) e recebe o valor da passagem."
+      ],
+      "metadata": {
+        "id": "ZHN9TqM2dtqR"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "while True:\n",
+        "    print(\"\\n===== Compra de Passagem =====\")\n",
+        "    print(\"1 - São Paulo\")\n",
+        "    print(\"2 - Rio de Janeiro\")\n",
+        "    print(\"3 - Curitiba\")\n",
+        "    print(\"4 - salvador\")\n",
+        "    print(\"5 - Sair\")\n",
+        "\n",
+        "    opcao8 = input(\"Escolha uma opção: \")\n",
+        "\n",
+        "    match opcao8:\n",
+        "        case \"1\":\n",
+        "            print(f\"O preço da passagem é 30,15\")\n",
+        "\n",
+        "        case \"2\":\n",
+        "            print(f\"O preço da passagem é 60,15\")\n",
+        "\n",
+        "        case \"3\":\n",
+        "            print(f\"O preço da passagem é 130,15\")\n",
+        "\n",
+        "        case \"4\":\n",
+        "            print(f\"O preço da passagem é 570,15\")\n",
+        "\n",
+        "        case \"5\":\n",
+        "            print(\"Saindo... Obrigado por utilizar nosso sistema!\")\n",
+        "            break\n",
+        "        case _:\n",
+        "            print(\"Opção inválida. Escolha uma opção válida.\")"
+      ],
+      "metadata": {
+        "id": "98mzc0_zdyzX"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "9. Simulador de Compra em Loja Online\n",
+        "\n",
+        "O usuário escolhe um produto e o programa informa o preço."
+      ],
+      "metadata": {
+        "id": "WISs5U_SjrCT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "print(\"\\n===== Martempresa =====\")\n",
+        "print(\"1 - Amaciante\")\n",
+        "print(\"2 - Desinfetante\")\n",
+        "print(\"3 - Água Sanitária\")\n",
+        "print(\"4 - Sabão em pó\")\n",
+        "print(\"5 - Sair\")\n",
+        "\n",
+        "opcao9 = input(\"Escolha seu produto: \")\n",
+        "\n",
+        "match opcao9:\n",
+        "    case \"1\":\n",
+        "        print(f\"O preço do amaciante é 20,99\")\n",
+        "\n",
+        "    case \"2\":\n",
+        "        print(f\"O preço do desinfetante é 15,99\")\n",
+        "\n",
+        "    case \"3\":\n",
+        "        print(f\"O preço da água sanitária é 18,99\")\n",
+        "\n",
+        "    case \"4\":\n",
+        "        print(f\"O preço do sabão em pó é 13,99- PROMOÇÃO\")\n",
+        "\n",
+        "    case \"5\":\n",
+        "        print(\"Saindo....Obrigado por utilizar a Martempresa!\")\n",
+        "    case _:\n",
+        "        print(\"Opção inválida. Escolha uma opção válida.\")"
+      ],
+      "metadata": {
+        "id": "jUdKGCI_jw0q"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "10. Sistema de Pagamento\n",
+        "\n",
+        "O usuário escolhe uma forma de pagamento e o programa informa se há desconto ou acréscimo."
+      ],
+      "metadata": {
+        "id": "23XxCeYjmHbn"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "\n",
+        "opcao10 = int(input(\"Selecione a forma de pagamento: \\n Dinheiro (1) \\n Débito (2) \\n Crédito (3) \\n Boleto (4)\"))\n",
+        "\n",
+        "match opcao10:\n",
+        "    case 1:\n",
+        "        print(f\"Existe um desconto de 10% sobre suas compras nas lojas cadastradas\")\n",
+        "    case 2:\n",
+        "        print(f\"Existe um desconto de 5% sobre suas compras nas lojas cadastradas\")\n",
+        "    case 3:\n",
+        "        print(f\"Existe um acrescimo de 12% sobre suas compras nas lojas\")\n",
+        "    case 4:\n",
+        "        print(f\"Não há descontos e nem acrescimos\")\n",
+        "    case _:\n",
+        "        print(\"Valor não identificado. Tente novamente!\")"
+      ],
+      "metadata": {
+        "id": "ASV61MakmPi2"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
